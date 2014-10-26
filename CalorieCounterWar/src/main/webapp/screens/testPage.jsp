@@ -12,6 +12,10 @@
 	<h1>Spring MVC Test</h1>
 	<h2>${msg1}</h2>
 	<h2>${msg2}</h2>
+<%-- 	<c:forEach items=${userList} var="element"> --%>
+<%-- 		<div>First name : <c:out value="${element.firstName }" /></div> --%>
+<%-- 		<div>Last name : <c:out value="${element.lastName }" /></div> --%>
+<%-- 	</c:forEach> --%>
 
 	<c:out value="${msg1}" />
 	<c:out value="${msg2}" />
