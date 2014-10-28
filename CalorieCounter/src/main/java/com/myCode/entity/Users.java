@@ -7,11 +7,12 @@ import javax.persistence.Table;
 
 //import org.springframework.data.annotation.*;
 
-//import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-//@Document(collection="users")
-@Entity
-@Table(name = "users")
+
+//@Entity
+//@Table(name = "users")
+@Document(collection="users")
 public class Users implements Serializable{
 	
 	@Id
