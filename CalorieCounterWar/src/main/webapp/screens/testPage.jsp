@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Test page</title>
 </head>
-<body>
+<body background="green" bgcolor="red">
 	<h1>Spring MVC Test</h1>
 	<h2>${msg1}</h2>
 	<h2>${msg2}</h2>

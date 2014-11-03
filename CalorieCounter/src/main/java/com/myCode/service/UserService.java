@@ -45,8 +45,8 @@ public class UserService {
 		this.mongoOps = mongoTemplate;
 	}
 
-	public void newUser() {
-		Users user = new Users("Kamelia", "Ghosh");
+	public void newUser(Users user) {
+		//Users user = new Users("Kamelia", "Ghosh");
 		System.out.println(user.getFirstName());
 		System.out.println(user.getLastName());
 

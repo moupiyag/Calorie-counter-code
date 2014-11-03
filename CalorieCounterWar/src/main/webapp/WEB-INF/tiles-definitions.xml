@@ -9,12 +9,16 @@
 		<put-attribute name="title" value="Calorie Counter"
 			type="string" />
 		<put-attribute name="header" value="/screens/header.jsp" />
-		<put-attribute name="footer" value="/screens/footer.jsp" />
 		<put-attribute name="menu" value="/screens/menu.jsp" />
 		<put-attribute name="body" value="/screens/blank.jsp" />
+		<put-attribute name="footer" value="/screens/footer.jsp" />
 	</definition>
 
 	<definition name="TestPage" extends="Template">
 		<put-attribute name="body" value="/screens/testPage.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="loginPage" extends="Template">
+		<put-attribute name="body" value="/screens/LoginPage.jsp"></put-attribute>
 	</definition>
 </tiles-definitions>
