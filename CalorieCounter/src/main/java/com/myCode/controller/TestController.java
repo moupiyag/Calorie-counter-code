@@ -53,7 +53,7 @@ public class TestController {
 	{
 		ModelAndView model = new ModelAndView("TestPage");
 		
-		userservice.newUser(user);
+		//userservice.newUser(user);
 		//model.getModelMap().addAttribute("userList", users);
 		model.getModelMap().addAttribute("msg1", "User created with first name :"+user.getFirstName()+"and last name:"+user.getLastName());
 		model.addObject("msg2","Login successful");

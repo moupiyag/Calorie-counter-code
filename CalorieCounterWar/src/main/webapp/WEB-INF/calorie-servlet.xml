@@ -85,6 +85,10 @@
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
 	</bean>
+
+	<!-- To translate any MongoExceptions thrown in @Repository annotated classes -->
+	<context:annotation-config />
+ 
 	
 	<bean id="userDao" class = "com.myCode.dao.UserDao"></bean>
 </beans>

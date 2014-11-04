@@ -152,6 +152,30 @@
 		<!-- <version>1.0.0.RELEASE</version> -->
 		<!-- </dependency> -->
 
+		<!-- spring security dependencies -->
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
+
 		<!-- mongo db dependencies -->
 
 		<dependency>
@@ -162,17 +186,17 @@
 			<scope>provided</scope>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.hibernate.ogm</groupId> -->
-<!-- 			<artifactId>hibernate-ogm-core</artifactId> -->
-<!-- 			<version>4.0.0.Beta2</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.hibernate.ogm</groupId> -->
+		<!-- <artifactId>hibernate-ogm-core</artifactId> -->
+		<!-- <version>4.0.0.Beta2</version> -->
+		<!-- </dependency> -->
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.hibernate.ogm</groupId> -->
-<!-- 			<artifactId>hibernate-ogm-mongodb</artifactId> -->
-<!-- 			<version>4.0.0.Beta1</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.hibernate.ogm</groupId> -->
+		<!-- <artifactId>hibernate-ogm-mongodb</artifactId> -->
+		<!-- <version>4.0.0.Beta1</version> -->
+		<!-- </dependency> -->
 
 		<!-- Hibernate dependencies -->
 
