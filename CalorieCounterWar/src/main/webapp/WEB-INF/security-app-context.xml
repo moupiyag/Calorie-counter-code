@@ -18,11 +18,9 @@
 					username-parameter="username"
 					password-parameter="password"
 					always-use-default-target="true" />
-<!-- 		<logout logout-success-url="/login?logout"  /> -->
+		<logout logout-success-url="/login?logout=1"  />
 		
 	</http>
-	
-<!-- 	<beans:bean id="userService" class="com.myCode.service.UserService" /> -->
 
 	<authentication-manager>
 		<authentication-provider user-service-ref="userService">

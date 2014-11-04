@@ -18,6 +18,8 @@
 		Role : <sec:authentication property="principal.authorities" />
 	</sec:authorize>
 	
+	<a href="<c:url value="/j_spring_security_logout"/>">Logout</a>
+	
 	<h2>${msg1}</h2>
 	<h2>${msg2}</h2>
 	<%-- 	<c:forEach items=${userList} var="element"> --%>

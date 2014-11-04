@@ -18,6 +18,10 @@
 		</font>
 	</c:if>
 	
+	<c:if test="${not empty param.logout }">
+	<font color="#ff0000">Logout successful</font>
+	</c:if>
+	
 	<table id="mainTable" style="width: 733px; height: 180px">
 		<tr>
 			<td><form:form method="POST" action="j_spring_security_check" commandName="user" >
