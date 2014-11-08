@@ -89,6 +89,10 @@
 	<!-- To translate any MongoExceptions thrown in @Repository annotated classes -->
 	<context:annotation-config />
  
+ 	<bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+		<constructor-arg name="strength" value="11" />
+	</bean>
+ 	
 	
 	<bean id="userDao" class = "com.myCode.dao.UserDao"></bean>
 </beans>

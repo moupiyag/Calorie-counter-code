@@ -49,7 +49,7 @@
 						<td><a href="">Login with Facebook</a></td>
 					</tr>
 					<tr>
-						<td><a href="">Register with Calorie counter</a></td>
+						<td><a href="<c:url value="/registration.do" />">Register with Calorie counter</a></td>
 					</tr>
 				</table>
 			</td>

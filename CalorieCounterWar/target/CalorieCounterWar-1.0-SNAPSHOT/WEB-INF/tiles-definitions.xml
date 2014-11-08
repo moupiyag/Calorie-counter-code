@@ -21,4 +21,9 @@
 	<definition name="loginPage" extends="Template">
 		<put-attribute name="body" value="/screens/LoginPage.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="signIn" extends="Template">
+		<put-attribute name="body" value="/screens/SignIn.jsp"></put-attribute>
+	</definition>
+	
 </tiles-definitions>

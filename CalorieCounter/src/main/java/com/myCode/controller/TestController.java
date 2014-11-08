@@ -48,7 +48,7 @@ public class TestController {
 		return model;
 	}
 	
-	@RequestMapping(value = "/login.do", method= {RequestMethod.POST,RequestMethod.GET})
+	@RequestMapping(value = "/login.do", method=RequestMethod.GET)
 	public ModelAndView doLogin(@ModelAttribute("user") Users user)
 	{
 		ModelAndView model = new ModelAndView("TestPage");
@@ -58,6 +58,23 @@ public class TestController {
 		model.getModelMap().addAttribute("msg1", "User created with first name :"+user.getFirstName()+"and last name:"+user.getLastName());
 		model.addObject("msg2","Login successful");
 		
+		return model;
+	}
+	
+	@RequestMapping(value = "/registration.do", method=RequestMethod.GET)
+	public ModelAndView showRegistrationPage()
+	{
+		ModelAndView model = new ModelAndView("signIn");
+		model.getModelMap().addAttribute("user" ,new Users());
+		
+		return model;
+	}
+	
+	@RequestMapping(value="/newuser.do", method=RequestMethod.POST)
+	public ModelAndView newUserRegistration(@ModelAttribute("user") Users user)
+	{
+		userservice.createNewUser(user);
+		ModelAndView model = doLogin(user);
 		return model;
 	}
 }

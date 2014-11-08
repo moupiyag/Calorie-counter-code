@@ -10,22 +10,22 @@
 
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/registration.do" access="permitAll" />
+		<intercept-url pattern="/newuser.do" access="permitAll" />
 		<intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
 		<!-- <http-basic/> -->
-		<form-login login-page="/login" 
-					default-target-url="/login.do"
-					authentication-failure-url="/login?login_error=1" 
-					username-parameter="username"
-					password-parameter="password"
-					always-use-default-target="true" />
-		<logout logout-success-url="/login?logout=1"  />
-		
+		<form-login login-page="/login" default-target-url="/login.do"
+			authentication-failure-url="/login?login_error=1" username-parameter="username"
+			password-parameter="password" always-use-default-target="true" />
+		<logout logout-success-url="/login?logout=1" />
+
 	</http>
 
 	<authentication-manager>
 		<authentication-provider user-service-ref="userService">
-<!-- 			<user-service></user-service> -->
-<!-- 			<password-encoder></password-encoder> -->
+			<!-- <user-service></user-service> -->
+<!-- 			<password-encoder hash="bcrypt"></password-encoder> -->
+			<password-encoder ref="encoder" />
 		</authentication-provider>
 	</authentication-manager>
 

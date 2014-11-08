@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.myCode.entity.Users;
 
@@ -36,16 +37,17 @@ public class UserService implements UserDetailsService{
 		this.mongoOps = (MongoOperations)mongoTemplate;
 	}
 
-	public void newUser(Users user) {
-		System.out.println(user.getFirstName());
-		System.out.println(user.getLastName());
-
-		if (mongoOps == null)
-			System.out.println("mongoOp is null");
-		else 
-		{
-			mongoOps.insert(user);
-		}
+	public void createNewUser(Users user) {
+		
+		System.out.println("Password : "+user.getPassword());
+		
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String hashedPassword = passwordEncoder.encode(user.getPassword());
+		
+		System.out.println("Hashed Password : "+hashedPassword);
+		user.setPassword(hashedPassword);
+		user.setRole(2);
+		mongoOps.insert(user);
 	}
 	
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
