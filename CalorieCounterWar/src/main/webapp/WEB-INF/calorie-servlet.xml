@@ -89,10 +89,12 @@
 	<!-- To translate any MongoExceptions thrown in @Repository annotated classes -->
 	<context:annotation-config />
  
+	<!--  To configure password encoder -->
  	<bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
 		<constructor-arg name="strength" value="11" />
 	</bean>
  	
-	
+	<!-- 	To initialize Dao classes -->
 	<bean id="userDao" class = "com.myCode.dao.UserDao"></bean>
+	
 </beans>

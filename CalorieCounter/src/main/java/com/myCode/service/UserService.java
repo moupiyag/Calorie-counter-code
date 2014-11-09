@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -18,23 +14,18 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.myCode.dao.UserDao;
 import com.myCode.entity.Users;
 
 @Service
 public class UserService implements UserDetailsService{
 
+	private UserDao userDao;
 	
-	private MongoTemplate mongoTemplate;
-	private MongoOperations mongoOps;
-
-	public MongoTemplate getMongoTemplate() {
-		return mongoTemplate;
-	}
-
 	@Autowired
-	public void setMongoTemplate(MongoTemplate mongoTemplate) {
-		this.mongoTemplate = mongoTemplate;
-		this.mongoOps = (MongoOperations)mongoTemplate;
+	public void setUserDao(UserDao userDao)
+	{
+		this.userDao = userDao;
 	}
 
 	public void createNewUser(Users user) {
@@ -47,22 +38,15 @@ public class UserService implements UserDetailsService{
 		System.out.println("Hashed Password : "+hashedPassword);
 		user.setPassword(hashedPassword);
 		user.setRole(2);
-		mongoOps.insert(user);
+		userDao.createNewUser(user);
 	}
 	
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
 	{
-		Users user = getUserDetails(username);
+		Users user = userDao.getUserDetails(username);
 		System.out.println(username);
 		User userdetail = new User(user.getUsername(),user.getPassword(),true,true,true,true,getAuthorities(user.getRole()));
 		return userdetail;
-	}
-	
-	private Users getUserDetails(String username)
-	{
-		Users user = mongoOps.findOne(new Query(Criteria.where("username").is(username)),Users.class );
-		System.out.println(user);
-		return user;
 	}
 	
 	private List<GrantedAuthority> getAuthorities(Integer role)
